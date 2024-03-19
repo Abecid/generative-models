@@ -1,0 +1,18 @@
+# diffusers>0.23
+# accelerate
+# imageio[ffmpeg]
+# pydantic
+# scikit-image
+# lpips
+
+torch
+diffusers>0.23
+transformers
+accelerate
+einops
+kornia
+imageio[ffmpeg]
+opencv-python
+pydantic
+scikit-image
+lpips
