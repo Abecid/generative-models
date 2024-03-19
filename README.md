@@ -115,42 +115,44 @@ now `DiffusionEngine`) has been cleaned up:
       training (`sgm/modules/diffusionmodules/sigma_sampling.py`).
 - Autoencoding models have also been cleaned up.
 
-## Installation:
+## Installation using docker:
 
 <a name="installation"></a>
 
-#### 1. Clone the repo
-
+#### 1. Create a new workspace
+Login to vessl.ai and create a new workspace.
+Set Image to `purplesand/generative_model:latest` and click `Create Workspace`.
+Then, clone the repository and navigate to the root directory.
 ```shell
-git clone https://github.com/Stability-AI/generative-models.git
-cd generative-models
+git clone https://github.com/PurpleSand123/generative-models.git
 ```
 
-#### 2. Setting up the virtualenv
-
-This is assuming you have navigated to the `generative-models` root after cloning it.
-
-**NOTE:** This is tested under `python3.10`. For other python versions, you might encounter version conflicts.
-
-**PyTorch 2.0**
-
-```shell
-# install required packages from pypi
-python3 -m venv .pt2
-source .pt2/bin/activate
-pip3 install -r requirements/pt2.txt
-```
-
-#### 3. Install `sgm`
-
+#### 2. Install `sgm`
+for development, add -e flag to install in editable mode
 ```shell
 pip3 install .
 ```
 
-#### 4. Install `sdata` for training
+#### 3. Download model weight
+Download the model weight from the [Hugging Face model hub](https://huggingface.co/stabilityai/sv3d) and place it in the `checkpoints` directory.
+
+or run
+```shell
+# login to huggingface cli
+huggingface-cli login
+# download the model
+bash scripts/download_model.sh
+```
+
+#### (Optional) 4. Install `sdata` for training
 
 ```shell
 pip3 install -e git+https://github.com/Stability-AI/datapipelines.git@main#egg=sdata
+```
+
+#### 5. Run example
+```shell
+python scripts/sampling/simple_video_sample.py
 ```
 
 ## Packaging

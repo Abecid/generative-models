@@ -4,12 +4,12 @@
 // To specify image name created by dev container,
 // 1. you should use [Dev Container CLI](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli).
 //   ```bash
-//   devcontainer build --workspace-folder . --image-name purplesand/stable3d:dev
+//   devcontainer build --workspace-folder . --image-name purplesand/generative_model:dev
 //   ```
-// 2. Remove long image name ex) vsc-stable3d-be... after build
+// 2. Remove long image name ex) vsc-generative_model-be... after build
 {
-    "name": "stable3d",
-    "image": "purplesand/stable3d:latest",
+    "name": "generative_model",
+    "image": "purplesand/generative_model:latest",
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {
     // },
