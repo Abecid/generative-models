@@ -121,14 +121,14 @@ now `DiffusionEngine`) has been cleaned up:
 
 #### 1. Create a new workspace
 Login to vessl.ai and create a new workspace.
-Set Image to `purplesand/generative_model:latest` and click `Create Workspace`.
+Set Image to custom image `purplesand/generative_model:latest` and click `Deploy`.
 Then, clone the repository and navigate to the root directory.
 ```shell
 git clone https://github.com/PurpleSand123/generative-models.git
 ```
 
 #### 2. Install `sgm`
-for development, add -e flag to install in editable mode
+for development, add `-e` flag to install in editable mode
 ```shell
 pip3 install .
 ```
@@ -141,7 +141,7 @@ or run
 # login to huggingface cli
 huggingface-cli login
 # download the model
-bash scripts/download_model.sh
+python scripts/download_model.py
 ```
 
 #### (Optional) 4. Install `sdata` for training
