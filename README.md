@@ -120,7 +120,7 @@ now `DiffusionEngine`) has been cleaned up:
 <a name="installation"></a>
 
 #### 1. Create a new workspace
-Login to vessl.ai and create a new workspace.
+Login to vessl.ai and [create a new workspace](https://docs.vessl.ai/guides/workspace/overview).
 Set Image to custom image `purplesand/generative_model:latest` and click `Deploy`.
 Then, clone the repository and navigate to the root directory.
 ```shell
@@ -151,8 +151,18 @@ pip3 install -e git+https://github.com/Stability-AI/datapipelines.git@main#egg=s
 ```
 
 #### 5. Run example
+Check news section for the latest model release
+For example to run SV3D_p on a streamlit:
 ```shell
-python scripts/sampling/simple_video_sample.py
+# Run in streamlit
+streamlit run scripts/demo/video_sampling.py
+```
+select `sv3d_p` from the dropdown and upload an image.
+
+For example to run SV3D_p on a single image:
+```shell
+# Run with 
+python scripts/sampling/simple_video_sample.py --input_path <path/to/image.png> --version sv3d_p --elevations_deg 10.0
 ```
 
 ## Packaging
