@@ -1,5 +1,10 @@
 from pytorch_lightning import seed_everything
 
+# add current directory to path
+import os
+import sys
+sys.path.append(os.getcwd())
+
 from scripts.demo.streamlit_helpers import *
 
 SAVE_PATH = "outputs/demo/txt2img/"

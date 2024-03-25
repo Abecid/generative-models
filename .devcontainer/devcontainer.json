@@ -1,12 +1,4 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/anaconda
-// 
-// To specify image name created by dev container,
-// 1. you should use [Dev Container CLI](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli).
-//   ```bash
-//   devcontainer build --workspace-folder . --image-name purplesand/generative_model:dev
-//   ```
-// 2. Remove long image name ex) vsc-generative_model-be... after build
 {
     "name": "generative_model",
     "image": "purplesand/generative_model:latest",
@@ -38,7 +30,9 @@
         "all",
         "--shm-size=4G",
         "--name",
-        "${localEnv:USER}_3d_devcontainer"
+        "${localEnv:USER}_3d_devcontainer",
+        "-v",
+        "${localEnv:HOME}/.cache/huggingface:/root/.cache/huggingface"
     ],
     "mounts": []
 }
