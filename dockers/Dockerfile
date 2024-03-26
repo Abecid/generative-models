@@ -16,6 +16,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     python-is-python3 \
     python3.10-dev \
     python3-pip \
+    ffmpeg \
     wget \
     software-properties-common curl openssh-server \
     && rm -rf /var/lib/apt/lists/*
@@ -25,4 +26,4 @@ RUN pip install jupyterlab
 
 # install required packages from pypi
 COPY requirements/pt2.txt tmp/requirements/pt2.txt
-RUN  pip3 install -r tmp/requirements/pt2.txt
+RUN  pip3 install -r tmp/requirements/pt2.txt --no-cache-dir
